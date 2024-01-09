@@ -1,0 +1,3 @@
+# Étapes de configuration pour Ubuntu
+
+TODO...
