@@ -4,7 +4,7 @@ Vcpkg (sur [Github](https://github.com/microsoft/vcpkg)) est un gestionnaire de 
 
 ## Installation de Vcpkg
 
-La procédure d'installation est sensiblement la même pour les trois plateformes, mais les prérequis sont différents. Vous pouvez suivre les étapes données dans [la documentation officielle](https://github.com/microsoft/vcpkg#getting-started). Comme pour beaucoup d'outils de développement, il est mieux d'installer Vcpkg dans un dossier dont le chemin ne contient pas d'espaces ou d'accents. Sur Windows, `C:\vcpkg` ou `C:\dev\vcpkg` est un bon endroit; sur Unix, `/usr/local/vcpkg` est généralement une bonne idée.
+La procédure d'installation est sensiblement la même pour les trois plateformes, mais les prérequis sont différents. Vous pouvez suivre les étapes données dans [la documentation officielle](https://github.com/microsoft/vcpkg#getting-started). Comme pour beaucoup d'outils de développement, il est mieux d'installer Vcpkg dans un dossier dont le chemin ne contient pas d'espaces ou d'accents. Sur Windows, `C:\vcpkg` ou `C:\devel\vcpkg` est un bon endroit; sur Unix, `/usr/local/vcpkg` est généralement une bonne idée.
 
 Si vous êtes sur une installation assez vierge d'Ubuntu, faites aussi d'abord `sudo apt-get install build-essential tar curl zip unzip` avant de suivre les étapes dans la doc de Vcpkg.
 
