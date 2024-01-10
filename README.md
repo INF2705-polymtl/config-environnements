@@ -50,14 +50,14 @@ Ce ne sont pas toutes les bibliothèques utilisées dans le cours, il y en a aus
 1. `vcpkg integrate install`
 1. `sudo apt-get install autoconf pkg-config libgl1-mesa-dev libgl-dev libglu1-mesa-dev libtool libudev-dev libx11-dev libxcursor-dev libxi-dev libxinerama-dev libxmu-dev libxrandr-dev libxxf86vm-dev mesa-common-dev xorg-dev python3 python3-distutils python3-jinja2`
 1. `vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3`
-1. Créer un *CMakeLists.txt* ressemblant à [celui-ci](ProjetVscodeOpenGL/CMakeLists.txt). Ajouter les instructions données quand on fait `vcpkg install` pour chaque module.
+1. Créer un *CMakeLists.txt* ressemblant à [celui-ci](ProjetCMakeOpenGL/CMakeLists.txt). Ajouter les instructions données quand on fait `vcpkg install` pour chaque module.
 1. Écrire du code OpenGL.
 1. ???
 1. profit
 
 ## Tester le tout
 
-Dans [ProjetVscodeOpenGL](ProjetVscodeOpenGL/) se trouve un petit programme qui permet de tester si votre VSCode avec CMake est bien configuré avec les bibliothèques bien installées. Il y a un [CMakeLists.txt](ProjetVscodeOpenGL/CMakeLists.txt) qui est fait pour importer ce qui a été installé plus tôt. On a un *main.cpp* qui permet de rouler une fonctions qui exécute un programme OpenGL très simple : créer une fenêtre qui affiche un *ramp-up* de rouge. Chacune des fonctions (compilée dans son propre .cpp) utilise une certaine combinaison de bibliothèques.
+Dans [ProjetCMakeOpenGL](ProjetCMakeOpenGL/) se trouve un petit programme qui permet de tester si votre configuration de CMake dans VSCode avec Vcpkg est bien faite avec les bibliothèques bien installées. Il y a un [CMakeLists.txt](ProjetCMakeOpenGL/CMakeLists.txt) qui est fait pour importer ce qui a été installé plus tôt. On a un *main.cpp* qui permet de rouler une fonctions qui exécute un programme OpenGL très simple : créer une fenêtre qui affiche un *ramp-up* de rouge. Chacune des fonctions (compilée dans son propre .cpp) utilise une certaine combinaison de bibliothèques.
 
 Vous pouvez commentez/décommentez les appels dans le `main` pour rouler chaque programme. Vous pouvez faire la même chose pour les `target_link_libraries` et les `find_package` dans le *CMakeLists.txt* pour tester l'importation de chaque bibliothèque.
 
