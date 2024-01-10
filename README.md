@@ -16,21 +16,14 @@ Sur Windows, l'installation des bibliothèques avec Vcpkg semble se faire relati
 
 [Ubuntu.md](doc/Ubuntu.md) montre les étapes qui semblent être nécessaires avant de faire les `vcpkg install` à partir d'une installation assez vierge de Ubuntu 22.
 
-Voici les `vcpkg install` à faire pour avoir les bibliothèques courantes d'OpenGL :
+Voici la commande pour installer les bibliothèques courantes d'OpenGL :
 
-* `glm`
-* `sfml`
-* `glbinding`
-* `sdl2`
-* `freeglut`
-* `glew`
-* `glfw3`
+`vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3`
 
-On ne va jamais se servir de toutes celles-ci en même temps dans le même projet, mais plutôt dans des combinaisons différentes. Par exemple, les exemples [originaux de Benoît Ozell](https://gitlab.com/ozell/inf2705-exemples) utilise GLUT, SDL et GLEW. Les [exemples de Charles Hosson](https://github.com/INF2705-polymtl) utilisent principalement SFML et glbinding. En laboratoire, ça varie.
+On ne va jamais se servir de toutes celles-ci en même temps dans le même projet, mais plutôt dans des combinaisons différentes. Par exemple, les [exemples originaux de Benoît Ozell](https://gitlab.com/ozell/inf2705-exemples) utilise GLUT, SDL et GLEW. Les [exemples de Charles Hosson](https://github.com/orgs/INF2705-polymtl/repositories) utilisent principalement SFML et glbinding. En laboratoire, ça varie.
 
 Ce ne sont pas toutes les bibliothèques utilisées dans le cours, il y en a aussi pour charger des images, du son, etc., mais c'est suffisant pour commencer à utiliser OpenGL.
 
 ## Conclusion
 
 Ce sont des directives qui semblent suffisantes. Dans tous les cas, les résultats peuvent varier, consultez un médecin si votre configuration d'environnement persiste plus que quatre heures 😅.
-

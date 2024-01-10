@@ -6,6 +6,8 @@ Vcpkg (sur [Github](https://github.com/microsoft/vcpkg)) est un gestionnaire de 
 
 La procédure d'installation est sensiblement la même pour les trois plateformes, mais les prérequis sont différents. Vous pouvez suivre les étapes données dans [la documentation officielle](https://github.com/microsoft/vcpkg#getting-started). Comme pour beaucoup d'outils de développement, il est mieux d'installer Vcpkg dans un dossier dont le chemin ne contient pas d'espaces ou d'accents. Sur Windows, `C:\vcpkg` ou `C:\dev\vcpkg` est un bon endroit; sur Unix, `/usr/local/vcpkg` est généralement une bonne idée.
 
+Si vous êtes sur une installation assez vierge d'Ubuntu, faites aussi d'abord `sudo apt-get install build-essential tar curl zip unzip` avant de suivre les étapes dans la doc de Vcpkg.
+
 Après avoir complété l'installation, il faut ajouter une variable d'environnement `VCPKG_ROOT` contenant le chemin vers l'installation de Vcpkg (par exemple `/usr/local/vcpkg`). Vous devriez aussi ajouter ce chemin dans votre variable PATH pour plus facilement utiliser l'outil en ligne de commande.
 
 ## Utilisation sur Windows avec Visual Studio
