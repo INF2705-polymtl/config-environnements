@@ -20,7 +20,7 @@ Voici la commande pour installer les bibliothèques courantes d'OpenGL :
 
 `vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3`
 
-On ne va jamais se servir de toutes celles-ci en même temps dans le même projet, mais plutôt dans des combinaisons différentes. D'une part, les [exemples originaux de Benoît Ozell](https://gitlab.com/ozell/inf2705-exemples) utilise GLUT, SDL et GLEW. D'autre part, les [exemples de Charles Hosson](https://github.com/orgs/INF2705-polymtl/repositories) utilisent principalement SFML et glbinding. En laboratoire, ça varie.
+On ne va jamais se servir de toutes celles-ci en même temps dans le même projet, mais plutôt dans des combinaisons différentes. D'une part, les [exemples originaux de Benoît Ozell](https://gitlab.com/ozell/inf2705-exemples) utilise GLUT, SDL et GLEW. D'autre part, les [exemples de Charles Hosson](https://github.com/INF2705-polymtl/exemples-chosson) utilisent principalement SFML et glbinding. En laboratoire, ça varie.
 
 Ce ne sont pas toutes les bibliothèques utilisées dans le cours, il y en a aussi pour charger des images, du son, etc., mais c'est suffisant pour commencer à utiliser OpenGL.
 
