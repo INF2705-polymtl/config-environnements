@@ -20,9 +20,15 @@ Voici la commande pour installer les bibliothèques courantes d'OpenGL :
 
 `vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3`
 
-On ne va jamais se servir de toutes celles-ci en même temps dans le même projet, mais plutôt dans des combinaisons différentes. Par exemple, les [exemples originaux de Benoît Ozell](https://gitlab.com/ozell/inf2705-exemples) utilise GLUT, SDL et GLEW. Les [exemples de Charles Hosson](https://github.com/orgs/INF2705-polymtl/repositories) utilisent principalement SFML et glbinding. En laboratoire, ça varie.
+On ne va jamais se servir de toutes celles-ci en même temps dans le même projet, mais plutôt dans des combinaisons différentes. D'une part, les [exemples originaux de Benoît Ozell](https://gitlab.com/ozell/inf2705-exemples) utilise GLUT, SDL et GLEW. D'autre part, les [exemples de Charles Hosson](https://github.com/orgs/INF2705-polymtl/repositories) utilisent principalement SFML et glbinding. En laboratoire, ça varie.
 
 Ce ne sont pas toutes les bibliothèques utilisées dans le cours, il y en a aussi pour charger des images, du son, etc., mais c'est suffisant pour commencer à utiliser OpenGL.
+
+## Tester le tout
+
+Dans [ProjetVscodeOpenGL](ProjetVscodeOpenGL/) se trouve un petit programme qui permet de tester si votre VSCode avec CMake est bien configuré avec les bibliothèques bien installées. Il y a un [CMakeLists.txt](ProjetVscodeOpenGL/CMakeLists.txt) qui est fait pour importer ce qui a été installé plus tôt. On a un *main.cpp* qui permet de rouler une fonctions qui exécute un programme OpenGL très simple : créer une fenêtre qui affiche un *ramp-up* de rouge. Chacune des fonctions (compilée dans son propre .cpp) utilise une certaine combinaison de bibliothèques.
+
+Vous pouvez commentez/décommentez les appels dans le `main` pour rouler chaque programme. Vous pouvez faire la même chose pour les `target_link_libraries` et les `find_package` dans le *CMakeLists.txt* pour tester l'importation de chaque bibliothèque.
 
 ## Conclusion
 

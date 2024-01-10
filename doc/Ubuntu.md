@@ -2,7 +2,7 @@
 
 Un fois que votre Vcpkg et votre VSCode sont bien configurés, vous devriez pouvoir faire un *hello world* en C++ et importer une bibliothèque simple comme TCLAP.
 
-Pour certains, il semble y avoir un problème avec la version de CMake installé par *snap*. Si dans VSCode vous avez une erreur du genre *Bad CMake executable*, faites selon [quelqu'un sur *askubuntu*](https://askubuntu.com/questions/1353824/bad-cmake-executable-vscode) et réinstallez CMake :
+Pour certains, il semble y avoir un problème avec la version de CMake installé par *snap*. Si dans VSCode vous avez une erreur du genre *Bad CMake executable*, faites comme [quelqu'un sur *askubuntu*](https://askubuntu.com/questions/1353824/bad-cmake-executable-vscode) et réinstallez CMake :
 
 ```
 snap remove cmake
