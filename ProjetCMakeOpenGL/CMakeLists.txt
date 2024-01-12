@@ -20,10 +20,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -fsigned-char -Wno-unknown-pr
 # Tous ce qui suit sont des package Vcpkg. Pour savoir quoi mettre, on fait "vcpkg install <le package>", puis on met ce qu'ils disent de mettre dans le CMakeLists.
 # Vous pouvez commenter/décommenter les packages que vous utilisez ou pas.
 
-# Cppitertools: Pas rapport à OpenGL, mais toujours utile.
-find_package(cppitertools CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE cppitertools::cppitertools)
-
 # GLM: Pour les math comme en GLSL.
 find_package(glm CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE glm::glm)
