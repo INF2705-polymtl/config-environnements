@@ -29,22 +29,22 @@ Ce ne sont pas toutes les bibliothèques utilisées dans le cours, il y en a aus
 1. Installer la dernière version de Visual Studio (Community est suffisant).
 1. Créer un dossier d'installation pour Vcpkg (disons `C:\vcpkg`).
 1. `git clone https://github.com/microsoft/vcpkg C:\vcpkg`
-1. `C:\vcpkg\bootstrap-vcpkg.bat`
+1. `C:\vcpkg\bootstrap-vcpkg.bat` (vous pouvez ajouter `-disableMetrics`)
 1. Ajouter variable d'environnement `VCPKG_ROOT` contenant `C:\vcpkg`.
 1. Ajouter `C:\vcpkg` au `PATH`.
 1. `vcpkg integrate install`
 1. `vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3`
-1. Créer une solution VS et écrire du code OpenGL. Pas besoin de configurer la solution, les librairies vont être importées automatiquement.
+1. Créer une solution VS et écrire du code OpenGL. Pas besoin de configurer la solution, les librairies vont être détectées et importées automatiquement.
 1. Réaliser que c'était probablement la première fois qu'on a utilisé un outil de Microsoft qui fonctionne bien. 🤯
 
 ## TL;DR pour Ubuntu
 
-1. `sudo apt-get install build-essential tar curl zip unzip`
+1. `sudo apt-get install build-essential tar curl zip unzip git`
 1. Installer VSCode (à traver le genre de *app store* d'Ubuntu).
 1. Installer les extensions *C/C++* et *CMake Tools*.
 1. Créer un dossier d'installation pour Vcpkg (disons `/usr/local/vcpkg`).
 1. `git clone https://github.com/microsoft/vcpkg /usr/local/vcpkg`
-1. `/usr/local/vcpkg/bootstrap-vcpkg.bat`
+1. `/usr/local/vcpkg/bootstrap-vcpkg.sh` (vous pouvez ajouter `-disableMetrics`)
 1. Ajouter variable d'environnement `VCPKG_ROOT` contenant `/usr/local/vcpkg`.
 1. Ajouter `/usr/local/vcpkg` au `PATH`.
 1. `vcpkg integrate install`
