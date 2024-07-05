@@ -1,9 +1,10 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.5.0)
+
 # La raison pour laquelle on fait une variable d'environnement VCPKG_ROOT.
 set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
 
 # Le nom du projet.
-project(INF2705_Exemple)
+project(ProjetTest)
 
 # On met les fichiers sources (incluant les entêtes)
 set(ALL_FILES
@@ -15,7 +16,7 @@ set(ALL_FILES
 add_executable(${PROJECT_NAME} ${ALL_FILES})
 
 # Les flags de compilation.
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -fsigned-char -Wno-unknown-pragmas -Wno-enum-compare")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -fsigned-char -Wno-unknown-pragmas -Wno-enum-compare -D WIN32_LEAN_AND_MEAN -D NOMINMAX -D _CRT_SECURE_NO_WARNINGS -D GLM_FORCE_SWIZZLE -D GLM_FORCE_INTRINSICS")
 
 # Tous ce qui suit sont des package Vcpkg. Pour savoir quoi mettre, on fait "vcpkg install <le package>", puis on met ce qu'ils disent de mettre dans le CMakeLists.
 # Vous pouvez commenter/décommenter les packages que vous utilisez ou pas.

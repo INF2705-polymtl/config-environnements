@@ -6,8 +6,8 @@
 #include <cmath>
 
 
-void runGlutExample(int& argc, char* argv[]); // GLUT
 void runSfmlExample(int& argc, char* argv[]); // SFML + glbinding
+void runGlutExample(int& argc, char* argv[]); // GLUT + GLEW
 void runSdlExample(int& argc, char* argv[]);  // SDL + GLEW
 
 

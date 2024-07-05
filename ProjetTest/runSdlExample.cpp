@@ -7,7 +7,7 @@
 #include <thread>
 #include <chrono>
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <GL/glew.h>
 
 
@@ -23,9 +23,19 @@ void runSdlExample(int& argc, char* argv[]) {
 	);
 	SDL_GL_CreateContext(window);
 	SDL_GL_SetSwapInterval(1);
+
 	glewExperimental = GL_TRUE;
 	glewInit();
-	
+
+	// Afficher les informations de base de la carte graphique et de la version OpenGL des drivers.
+	auto openglVersion = glGetString(GL_VERSION);
+	auto openglVendor = glGetString(GL_VENDOR);
+	auto openglRenderer = glGetString(GL_RENDERER);
+	auto glslVersion = glGetString(GL_SHADING_LANGUAGE_VERSION);
+	printf("OpenGL %s\n", openglVersion);
+	printf("GPU    %s, %s\n", openglRenderer, openglVendor);
+	printf("GLSL   %s\n", glslVersion);
+
 	float red = 0.0f;
 	bool running = true;
 	while (running) {
