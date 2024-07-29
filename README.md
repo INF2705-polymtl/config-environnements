@@ -2,7 +2,7 @@
 
 En INF2705, on doit se servir de plusieurs bibliothèques tierces pour travailler en OpenGL. Celles-ci sont plus ou moins bas niveau et servent à importer les fonctionnalités OpenGL et à gérer les fenêtres et événements. Il y a beaucoup de façon d'installer ces bibliothèques et ça dépend entièrement de la plateforme et de l'IDE sur lesquels on travaille.
 
-Pour les biens du cours d'infographie, vous devez installer Vcpkg et configurer votre IDE de choix. Les fichiers de projets (solution Visual Studio et projet CMake) sont généralement fournis pour les exemples en classe et les laboratoires. Vous pouvez donc vous limiter aux étapes présentées dans les TL;DR (*Too Long Didn't Read*) pour Windows et Ubuntu à la fin du présent document.
+Pour les biens du cours d'infographie, vous devez installer Vcpkg et configurer votre IDE de choix. Les fichiers de projets (solution Visual Studio et projet CMake) sont généralement fournis pour les exemples en classe et les laboratoires. **Vous pouvez donc vous limiter aux étapes présentées dans les TL;DR (*Too Long; Didn't Read*) pour Windows et Ubuntu à la fin du présent document.**
 
 ## Configuration d'un IDE et gestionnaire de bibliothèque
 
@@ -35,33 +35,46 @@ Vous pouvez commentez/décommentez les appels dans le `main` pour rouler chaque 
 ## TL;DR pour Windows
 
 1. Installer la dernière version de Visual Studio (Community est suffisant) avec les modules de C++.
-1. Créer un dossier d'installation pour Vcpkg (disons `C:\vcpkg`).
-1. `git clone https://github.com/microsoft/vcpkg C:\vcpkg`
-1. `C:\vcpkg\bootstrap-vcpkg.bat` (vous pouvez ajouter `-disableMetrics`)
-1. Ajouter variable d'environnement `VCPKG_ROOT` contenant `C:\vcpkg`.
-1. Ajouter `C:\vcpkg` au `PATH`.
-1. `vcpkg integrate install`
-1. `vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3 tinyobjloader`
+1. Créer un dossier d'installation pour Vcpkg (disons `C:\Users\<votre compte>\vcpkg`) et aller dans ce dossier avec un terminal.
+1. `git clone https://github.com/microsoft/vcpkg .`
+1. `.\bootstrap-vcpkg.bat` (vous pouvez ajouter `-disableMetrics`)
+1. `.\vcpkg integrate install`
+1. `.\vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3 tinyobjloader`
+1. Ajouter une variable d'environnement `VCPKG_ROOT` contenant `C:\Users\<votre compte>\vcpkg`.
+1. Ajouter `C:\Users\<votre compte>\vcpkg` au `PATH`.
 1. Ouvrir [ProjetTest.sln](ProjetTest/ProjetTest.sln) avec Visual Studio et exécuter le programme.
 1. Réaliser que c'était probablement la première fois qu'on a utilisé un outil de Microsoft qui fonctionne bien. 🤯
 
 ## TL;DR pour Ubuntu
 
-1. `sudo apt-get install build-essential cmake cmake-extras tar curl zip unzip git`
+1. `sudo apt-get install build-essential cmake cmake-extras tar curl zip unzip git autoconf pkg-config libgl1-mesa-dev libgl-dev libglu1-mesa-dev libtool libudev-dev libx11-dev libxcursor-dev libxi-dev libxinerama-dev libxmu-dev libxrandr-dev libxxf86vm-dev mesa-common-dev xorg-dev python3 python3-jinja2`
 1. Installer VSCode (à traver le genre de *app store* d'Ubuntu).
 1. Installer les extensions *C/C++* et *CMake Tools* pour VSCode.
-1. Créer un dossier d'installation pour Vcpkg (disons `~/vcpkg`).
-1. `git clone https://github.com/microsoft/vcpkg ~/vcpkg`
-1. `~/vcpkg/bootstrap-vcpkg.sh` (vous pouvez ajouter `-disableMetrics`)
-1. Ajouter variable d'environnement `VCPKG_ROOT` contenant `/vcpkg`.
+1. Créer un dossier d'installation pour Vcpkg (disons `~/vcpkg`) et aller dans ce dossier avec un terminal.
+1. `git clone https://github.com/microsoft/vcpkg .`
+1. `./bootstrap-vcpkg.sh` (vous pouvez ajouter `-disableMetrics`)
+1. `./vcpkg integrate install`
+1. `./vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3 tinyobjloader`
+1. Ajouter une variable d'environnement `VCPKG_ROOT` contenant `~/vcpkg` (ou préférablement le chemin complet vers ce dossier).
 1. Ajouter `~/vcpkg` au `PATH`.
-1. `vcpkg integrate install`
-1. `sudo apt-get install autoconf pkg-config libgl1-mesa-dev libgl-dev libglu1-mesa-dev libtool libudev-dev libx11-dev libxcursor-dev libxi-dev libxinerama-dev libxmu-dev libxrandr-dev libxxf86vm-dev mesa-common-dev xorg-dev python3 python3-jinja2`
-1. `vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3 tinyobjloader`
-1. Redémarrer la machine.
+1. Redémarrer la machine? Ça semble nécessaire pour certains.
 1. Ouvrir le dossier [ProjetTest](ProjetTest) avec VSCode et exécuter le programme.
 1. ???
 1. profit
+
+## TL;DR pour CentOS
+
+1. `sudo dnf install cmake git clang autoconf libtool systemd-devel libX11 libX11-devel libXcursor libXcursor-devel libXrandr libXrandr-devel mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel libXi libXi-devel perl-open perl-FindBin python3-jinja2 libXinerama libXinerama-devel`
+1. Installer VSCode [avec YUM ou DNF](https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions).
+1. Installer les extensions *C/C++* et *CMake Tools* pour VSCode.
+1. Créer un dossier d'installation pour Vcpkg (disons `~/vcpkg`) et aller dans ce dossier avec un terminal.
+1. `git clone https://github.com/microsoft/vcpkg .`
+1. `./bootstrap-vcpkg.sh` (vous pouvez ajouter `-disableMetrics`)
+1. `./vcpkg integrate install`
+1. `./vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3 tinyobjloader`
+1. Ajouter une variable d'environnement `VCPKG_ROOT` contenant `~/vcpkg` (ou préférablement le chemin complet vers ce dossier).
+1. Ajouter `~/vcpkg` au `PATH`.
+1. Ouvrir le dossier [ProjetTest](ProjetTest) avec VSCode et exécuter le programme.
 
 ## Conclusion
 

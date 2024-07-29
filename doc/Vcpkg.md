@@ -4,7 +4,7 @@ Vcpkg (sur [Github](https://github.com/microsoft/vcpkg)) est un gestionnaire de 
 
 ## Installation de Vcpkg
 
-La procédure d'installation est sensiblement la même pour les trois plateformes, mais les prérequis sont différents. Vous pouvez suivre les étapes données dans [la documentation officielle](https://github.com/microsoft/vcpkg?tab=readme-ov-file#get-started) selon votre environnement. Comme pour beaucoup d'outils de développement, il est mieux d'installer Vcpkg dans un dossier dont le chemin ne contient pas d'espaces ou d'accents. Sur Windows, `C:\vcpkg` ou `C:\devel\vcpkg` est un bon endroit; sur Unix, `/usr/local/vcpkg` ou `~/vcpkg` sont des possibilités. `~/vcpkg` nous évite les `sudo` à chaque appel et les méchants `chmod 777`.
+La procédure d'installation est sensiblement la même pour les trois plateformes, mais les prérequis sont différents. Vous pouvez suivre les étapes données dans [la documentation officielle](https://github.com/microsoft/vcpkg?tab=readme-ov-file#get-started) selon votre environnement. Comme pour beaucoup d'outils de développement, il est mieux d'installer Vcpkg dans un dossier dont le chemin ne contient pas d'espaces ou d'accents. Sur Windows, `C:\vcpkg` ou `C:\Users\<votre compte>\vcpkg` sont des bons endroits; sur Unix, `/usr/local/vcpkg` ou `~/vcpkg` sont des possibilités. `~/vcpkg` (Linux) nous évite les `sudo` à chaque appel et les `chmod 777`; pareillement pour `C:\Users\<votre compte>\vcpkg` et les droits d'admin sur Windows.
 
 Si vous êtes sur une installation assez vierge d'Ubuntu, faites aussi d'abord `sudo apt-get install build-essential cmake cmake-extras tar curl zip unzip git` avant de suivre les étapes dans la doc de Vcpkg.
 
