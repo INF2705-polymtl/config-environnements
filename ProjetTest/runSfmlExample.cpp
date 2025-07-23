@@ -14,17 +14,18 @@ using namespace gl;
 
 
 void runSfmlExample(int& argc, char* argv[]) {
+		// Créer la fenêtre et initialiser le contexte OpenGL.
 	sf::Window window;
 	window.create(
-		{600, 600},
-		"Exemple SFML + glbinding",
-		sf::Style::Default,
-		sf::ContextSettings(24, 8)
+		sf::VideoMode({600, 600}), // Dimensions de la fenêtre
+		"Exemple SFML + glbinding", // Titre
+		sf::Style::Default,        // Style de fenêtre (avec barre de titre et boutons).
+		sf::State::Windowed,       // État de la fenêtre au démarrage.
+		sf::ContextSettings(24)    // Taille du tampon de profondeur. 24 bit est pas mal le standard.
 	);
-	window.setFramerateLimit(60);
+	window.setFramerateLimit(30); // Le FPS d'affichage.
 	window.setActive(true);
-
-	glbinding::Binding::initialize(nullptr, true);
+	glbinding::Binding::initialize(nullptr, true); // La résolution des fonctions d'OpenGL.
 
 	// Afficher les informations de base de la carte graphique et de la version OpenGL des drivers.
 	auto openglVersion = glGetString(GL_VERSION);
@@ -48,9 +49,11 @@ void runSfmlExample(int& argc, char* argv[]) {
 		red = fmodf(red, 1.0f);
 
 		window.display();
-		sf::Event e;
-		while(window.pollEvent(e)) {
-			if (e.type == sf::Event::EventType::Closed)
+
+		// On pourrait gérer les évènements de fenêtre (clavier, redimensionnement, fermeture, etc), mais pour aujourd'hui on va juste traiter l'événement de fermeture de fenêtre.
+		while (auto e = window.pollEvent()) {
+			// On arrête si l'utilisateur appuie sur le X de la fenêtre (ou le raccourci clavier associé tel que Alt+F4 sur Windows).
+			if (e->is<sf::Event::Closed>())
 				window.close();
 		}
 	}
