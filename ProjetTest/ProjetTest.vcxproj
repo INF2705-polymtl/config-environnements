@@ -148,8 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="runGlutExample.cpp" />
-    <ClCompile Include="runSdlExample.cpp" />
     <ClCompile Include="runSfmlExample.cpp" />
   </ItemGroup>
   <ItemGroup>

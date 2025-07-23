@@ -10,7 +10,7 @@ Pour les biens du cours d'infographie, vous devez installer Vcpkg et configurer 
 
 [Vcpkg.md](doc/Vcpkg.md) montre comment se servir de Vcpkg sur Windows, Linux et MacOS à l'aide de Visual Studio ou de VSCode et CMake.
 
-Une fois Vcpkg et VSCode ou Visual Studio configurés sur votre machine, vous pouvez installer les bibliothèques nécessaires. Dépendemment de ce que vous faites, vous pourriez avoir besoin de SDL, SFML, GLUT, GLEW, GLFW et glbinding. On fait une série de `vcpkg install la-patante`.
+Une fois Vcpkg et VSCode ou Visual Studio configurés sur votre machine, vous pouvez installer les bibliothèques nécessaires. On fait une série de `vcpkg install la-patante`.
 
 ## Installation des bibliothèques avec Vcpkg
 
@@ -20,9 +20,7 @@ Sur Windows, l'installation des bibliothèques avec Vcpkg semble se faire relati
 
 Voici la commande pour installer les bibliothèques utiles pour le cours :
 
-`vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3 tinyobjloader`
-
-On ne va jamais se servir de toutes celles-ci en même temps dans le même projet, mais plutôt dans des combinaisons différentes. D'une part, les [exemples originaux de Benoît Ozell](https://gitlab.com/ozell/inf2705-exemples) utilise GLUT, SDL et GLEW. D'autre part, les [exemples de Charles Hosson](https://github.com/INF2705-polymtl/exemples-chosson) utilisent principalement SFML et glbinding. En laboratoire, ça varie.
+`vcpkg install glm sfml glbinding tinyobjloader imgui imgui-sfml`
 
 Ce sont pas mal toutes les bibliothèques utilisées dans le cours.
 
@@ -39,40 +37,42 @@ Vous pouvez commentez/décommentez les appels dans le `main` pour rouler chaque 
 1. `git clone https://github.com/microsoft/vcpkg .`
 1. `.\bootstrap-vcpkg.bat` (vous pouvez ajouter `-disableMetrics`)
 1. `.\vcpkg integrate install`
-1. `.\vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3 tinyobjloader`
+1. `.\vcpkg install glm sfml glbinding tinyobjloader imgui imgui-sfml`
 1. Ajouter une variable d'environnement `VCPKG_ROOT` contenant `C:\Users\<votre compte>\vcpkg`.
 1. Ajouter `C:\Users\<votre compte>\vcpkg` au `PATH`.
 1. Ouvrir [ProjetTest.sln](ProjetTest/ProjetTest.sln) avec Visual Studio et exécuter le programme.
-1. Réaliser que c'était probablement la première fois qu'on a utilisé un outil de Microsoft qui fonctionne bien. 🤯
 
-## TL;DR pour Ubuntu
+## TL;DR pour Linux
 
-1. `sudo apt-get install build-essential cmake cmake-extras tar curl zip unzip git autoconf pkg-config libgl1-mesa-dev libgl-dev libglu1-mesa-dev libtool libudev-dev libx11-dev libxcursor-dev libxi-dev libxinerama-dev libxmu-dev libxrandr-dev libxxf86vm-dev mesa-common-dev xorg-dev python3 python3-jinja2`
-1. Installer VSCode (à traver le genre de *app store* d'Ubuntu).
+1.  1. Pour Ubuntu : `sudo apt-get install build-essential cmake cmake-extras tar curl zip unzip git autoconf pkg-config libgl1-mesa-dev libgl-dev libglu1-mesa-dev libtool libudev-dev libx11-dev libxcursor-dev libxi-dev libxinerama-dev libxmu-dev libxrandr-dev libxxf86vm-dev mesa-common-dev xorg-dev python3 python3-jinja2`
+    1. Pour CentOS : `sudo dnf install cmake git clang autoconf libtool systemd-devel libX11 libX11-devel libXcursor libXcursor-devel libXrandr libXrandr-devel mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel libXi libXi-devel perl-open perl-FindBin python3-jinja2 libXinerama libXinerama-devel`
+1. Installer VSCode (à traver le genre de *app store* d'Ubuntu ou [avec YUM ou DNF](https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions) sur CentOS).
 1. Installer les extensions *C/C++* et *CMake Tools* pour VSCode.
 1. Créer un dossier d'installation pour Vcpkg (disons `~/vcpkg`) et aller dans ce dossier avec un terminal.
 1. `git clone https://github.com/microsoft/vcpkg .`
 1. `./bootstrap-vcpkg.sh` (vous pouvez ajouter `-disableMetrics`)
 1. `./vcpkg integrate install`
-1. `./vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3 tinyobjloader`
+1. `./vcpkg install glm sfml glbinding tinyobjloader imgui imgui-sfml`
 1. Ajouter une variable d'environnement `VCPKG_ROOT` contenant `~/vcpkg` (ou préférablement le chemin complet vers ce dossier).
 1. Ajouter `~/vcpkg` au `PATH`.
 1. Redémarrer la machine? Ça semble nécessaire pour certains.
 1. Ouvrir le dossier [ProjetTest](ProjetTest) avec VSCode et exécuter le programme.
-1. ???
-1. profit
 
-## TL;DR pour CentOS
+## TL;DR pour MacOS
 
-1. `sudo dnf install cmake git clang autoconf libtool systemd-devel libX11 libX11-devel libXcursor libXcursor-devel libXrandr libXrandr-devel mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel libXi libXi-devel perl-open perl-FindBin python3-jinja2 libXinerama libXinerama-devel`
-1. Installer VSCode [avec YUM ou DNF](https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions).
+1. Faire une prière à la pomme toute puissante, créatrice du *iCloud* et de la terre.
+1. Installer XCode.
+1. Installer XQuartz.
+1. Installer Homebrew.
+1. `brew install pkg-config libxinerama libxcursor mesa-glu libxi`
+1. Installer VSCode.
 1. Installer les extensions *C/C++* et *CMake Tools* pour VSCode.
 1. Créer un dossier d'installation pour Vcpkg (disons `~/vcpkg`) et aller dans ce dossier avec un terminal.
 1. `git clone https://github.com/microsoft/vcpkg .`
 1. `./bootstrap-vcpkg.sh` (vous pouvez ajouter `-disableMetrics`)
 1. `./vcpkg integrate install`
-1. `./vcpkg install glm sfml glbinding sdl2 freeglut glew glfw3 tinyobjloader`
-1. Ajouter une variable d'environnement `VCPKG_ROOT` contenant `~/vcpkg` (ou préférablement le chemin complet vers ce dossier).
+1. `./vcpkg install glm sfml glbinding tinyobjloader imgui imgui-sfml`
+1. 1. Ajouter une variable d'environnement `VCPKG_ROOT` contenant `~/vcpkg` (ou préférablement le chemin complet vers ce dossier).
 1. Ajouter `~/vcpkg` au `PATH`.
 1. Ouvrir le dossier [ProjetTest](ProjetTest) avec VSCode et exécuter le programme.
 
