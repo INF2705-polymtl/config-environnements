@@ -2,7 +2,7 @@
 
 En INF2705, on doit se servir de plusieurs bibliothèques tierces pour travailler en OpenGL. Celles-ci sont plus ou moins bas niveau et servent à importer les fonctionnalités OpenGL et à gérer les fenêtres et événements. Il y a beaucoup de façon d'installer ces bibliothèques et ça dépend entièrement de la plateforme et de l'IDE sur lesquels on travaille.
 
-Pour les biens du cours d'infographie, vous devez installer Vcpkg et configurer votre IDE de choix. Les fichiers de projets (solution Visual Studio et projet CMake) sont généralement fournis pour les exemples en classe et les laboratoires. **Vous pouvez donc vous limiter aux étapes présentées dans les TL;DR (*Too Long; Didn't Read*) pour Windows et Ubuntu à la fin du présent document.**
+Pour les biens du cours d'infographie, vous devez installer Vcpkg et configurer votre IDE de choix. Les fichiers de projets (solution Visual Studio et projet CMake) sont généralement fournis pour les exemples en classe et les laboratoires. **Vous pouvez donc vous limiter aux étapes présentées dans les TL;DR (*Too Long; Didn't Read*) pour les différents OS à la fin du présent document.**
 
 ## Configuration d'un IDE et gestionnaire de bibliothèque
 
@@ -42,6 +42,8 @@ Vous pouvez commentez/décommentez les appels dans le `main` pour rouler chaque 
 1. Ajouter `C:\Users\<votre compte>\vcpkg` au `PATH`.
 1. Ouvrir [ProjetTest.sln](ProjetTest/ProjetTest.sln) avec Visual Studio et exécuter le programme.
 
+Si vous voulez utiliser VSCode sur Windows, vous devez faire toutes les étapes ci-dessus incluant l'installation de Visual Studio, car ça installe le compilateur. Vous devez ensuite installer VSCode à partir du site de Microsoft, puis installer les extensions *C/C++* et *CMake Tools*. Vous pouvez ensuite ouvrir le dossier [ProjetTest](ProjetTest) avec VSCode et exécuter le programme.
+
 ## TL;DR pour Linux
 
 1.  1. Pour Ubuntu : `sudo apt-get install build-essential cmake cmake-extras tar curl zip unzip git autoconf pkg-config libgl1-mesa-dev libgl-dev libglu1-mesa-dev libtool libudev-dev libx11-dev libxcursor-dev libxi-dev libxinerama-dev libxmu-dev libxrandr-dev libxxf86vm-dev mesa-common-dev xorg-dev python3 python3-jinja2`
@@ -72,10 +74,6 @@ Vous pouvez commentez/décommentez les appels dans le `main` pour rouler chaque 
 1. `./bootstrap-vcpkg.sh` (vous pouvez ajouter `-disableMetrics`)
 1. `./vcpkg integrate install`
 1. `./vcpkg install glm sfml glbinding tinyobjloader imgui imgui-sfml`
-1. 1. Ajouter une variable d'environnement `VCPKG_ROOT` contenant `~/vcpkg` (ou préférablement le chemin complet vers ce dossier).
+1. Ajouter une variable d'environnement `VCPKG_ROOT` contenant `~/vcpkg` (ou préférablement le chemin complet vers ce dossier).
 1. Ajouter `~/vcpkg` au `PATH`.
 1. Ouvrir le dossier [ProjetTest](ProjetTest) avec VSCode et exécuter le programme.
-
-## Conclusion
-
-Les résultats peuvent varier, consultez un médecin si votre configuration d'environnement persiste plus que quatre heures 😅.

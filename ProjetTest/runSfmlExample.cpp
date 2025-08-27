@@ -8,23 +8,26 @@
 #include <glbinding/Binding.h>
 #include <glbinding/gl/gl.h>
 #include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 
 
 using namespace gl;
 
 
 void runSfmlExample(int& argc, char* argv[]) {
-		// Créer la fenêtre et initialiser le contexte OpenGL.
-	sf::Window window;
+	// Créer la fenêtre et initialiser le contexte OpenGL.
+	sf::RenderWindow window;
 	window.create(
-		sf::VideoMode({600, 600}), // Dimensions de la fenêtre
+		sf::VideoMode({600, 600}),  // Dimensions de la fenêtre
 		"Exemple SFML + glbinding", // Titre
-		sf::Style::Default,        // Style de fenêtre (avec barre de titre et boutons).
-		sf::State::Windowed,       // État de la fenêtre au démarrage.
-		sf::ContextSettings(24)    // Taille du tampon de profondeur. 24 bit est pas mal le standard.
+		sf::Style::Default,         // Style de fenêtre (avec barre de titre et boutons).
+		sf::State::Windowed,        // État de la fenêtre au démarrage.
+		sf::ContextSettings{24}     // Taille du tampon de profondeur. 24 bit est pas mal le standard.
 	);
 	window.setFramerateLimit(30); // Le FPS d'affichage.
-	window.setActive(true);
+	bool ok = window.setActive(true);
+	if (not ok)
+		std::cout << "Oups!" << std::endl;
 	glbinding::Binding::initialize(nullptr, true); // La résolution des fonctions d'OpenGL.
 
 	// Afficher les informations de base de la carte graphique et de la version OpenGL des drivers.
@@ -43,7 +46,7 @@ void runSfmlExample(int& argc, char* argv[]) {
 	float red = 0.0f;
 	while (window.isOpen()) {
 		glClearColor(red, 0, 0, 1);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT);
 
 		red += 0.01f;
 		red = fmodf(red, 1.0f);
